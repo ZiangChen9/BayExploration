@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BaseBayesOptimizer(ABC):
+class BaseOptimizer(ABC):
     def __init__(self):
         self._seed = 0
 

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Dict
+from typing import Dict, Any
 
 
 class BaseGP(ABC):
@@ -14,3 +14,11 @@ class BaseGP(ABC):
 
     def get_name(self) -> str:
         return self.__class__.__name__ + str(self.mean) + str(self.covariance)
+
+
+class SingleTaskGaussianProcess(BaseGP):
+    def __init__(self):
+        super().__init__()
+
+    def setup(self, config):
+        return super().setup(config)
