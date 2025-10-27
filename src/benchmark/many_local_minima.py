@@ -1,5 +1,5 @@
-import torch
 import numpy as np
+import torch
 
 from src.benchmark.base_function import BaseTestFunction
 

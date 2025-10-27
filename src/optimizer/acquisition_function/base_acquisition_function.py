@@ -1,6 +1,4 @@
-"""
-采集函数基类
-"""
+"""采集函数基类"""
 
 from abc import ABC, abstractmethod
 

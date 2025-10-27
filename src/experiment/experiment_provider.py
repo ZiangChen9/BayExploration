@@ -5,12 +5,11 @@
 
 from __future__ import annotations
 
-import abc
 import json
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, Tuple
+from wsgiref.validate import validator
 
 import torch
 import yaml
@@ -20,6 +19,7 @@ from gpytorch import ExactMarginalLogLikelihood
 from torch.quasirandom import SobolEngine
 
 from src.benchmark.base_function import BaseTestFunction
+from pydantic import BaseModel, feild_validator
 
 
 class BaseExperimentFactory(ABC):
@@ -47,7 +47,9 @@ class ExperimentFactory(BaseExperimentFactory):
                 config = json.load(f)
         return cls(config)
 
-    def config_val(self):
+    @feild_validator("config")
+    @classmethod
+    def config_val(cls):
         """
         检查配置是否合法
         Returns:
