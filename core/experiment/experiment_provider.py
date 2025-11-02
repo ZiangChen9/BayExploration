@@ -9,7 +9,6 @@ import json
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, Tuple
-from wsgiref.validate import validator
 
 import torch
 import yaml
@@ -18,8 +17,7 @@ from botorch.models import SingleTaskGP
 from gpytorch import ExactMarginalLogLikelihood
 from torch.quasirandom import SobolEngine
 
-from src.benchmark.base_function import BaseTestFunction
-from pydantic import BaseModel, feild_validator
+from core.benchmark.base_function import BaseTestFunction
 
 
 class BaseExperimentFactory(ABC):

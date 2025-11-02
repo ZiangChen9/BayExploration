@@ -1,6 +1,6 @@
 import torch
 
-from src.benchmark.base_function import BaseTestFunction
+from core.benchmark.base_function import BaseTestFunction
 
 
 class Booth(BaseTestFunction):
