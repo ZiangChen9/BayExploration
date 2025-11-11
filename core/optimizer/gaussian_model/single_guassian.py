@@ -6,20 +6,19 @@ from gpytorch.means import ConstantMean, LinearMean
 from torch import Tensor
 
 from core.optimizer.gaussian_model.base_guassian import BaseGPModel
+from core.optimizer.gaussian_model.means import QuadraticMean
+
 
 MEAN_MODULE_MAP = {
     "constant": ConstantMean,
     "linear": LinearMean,
-    # TODO: add more mean modules
-    # "quadratic": QuadraticMean,
+    "quadratic": QuadraticMean,
 }
 
 COVARIANCE_MODULE_MAP = {
     "rbf": RBFKernel,
     "matern1_5": lambda nu: MaternKernel(nu=1.5),
     "matern2_5": lambda nu: MaternKernel(nu=2.5),
-    # TODO: add more covariance modules
-    # "exponential": ExponentialKernel,
 }
 
 
